@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/imc.css">
+    <title>Document</title>
+</head>
+<body onload="fechtDataPercetil()"> 
+    <div class="container mx-auto sm:grid sm:grid-flow-row sm:p-40 gap-10">
+        <div class="sm:grid sm:grid-flow-row grid-flow-col gap-4 text-center" 
+             id="calculadora">
+            <a target="_blank" 
+              href="https://www.calcule.net/saude/calcular-imc-calculo-de-imc-ideal-online-aprenda-fazer-a-formula-para-calcular/" 
+              class="font-bold text-2xl font-serif p-5">
+                CALCULADORA DE IMC
+            </a>
+            <div class="flex flex-col text-center p-3 bg-blue-400 shadow-black-1">
+                <label class="p-5 text-white-100 text-white" for="sexoF">
+                    SEXO
+                </label>
+                <div class="flex justify-around">
+                    <input 
+                        type="radio"
+                        name="sexo"
+                        class="none"
+                        id="sexoF"
+                        value="feminino"
+                    />
+                    <label 
+                        for="sexoF" 
+                        class="btn-button cursor-pointer"
+                        key="femenino"
+                        >
+                        FEMENINO
+                    </label>
+
+                    <input
+                        type="radio"
+                        name="sexo"
+                        class="none"
+                        id="sexoM"
+                        value="masculino"
+                        checked
+                    />  
+                    <label 
+                        for="sexoM" 
+                        class="btn-button cursor-pointer"
+                        key="masculino"
+                        >
+                        MASCULINO
+                    </label>
+                </div>
+                
+            </div>
+            <div class="flex flex-col justify-around items-center p-3 shadow-black-1">
+                <label>
+                    IDADE
+                </label>
+                <input
+                    type="text"
+                    maxlength="2"
+                    value="19"
+                    placeholder="Digite sua idede"
+                    class="input-text border-slate-200 placeholder-slate-900 w-64 h-10"
+                    id="idade"
+                />
+                <small class="p-2">Exemplo: 10 até 99 anos</small>
+            </div>
+            <div class="flex flex-col justify-around items-center p-3 shadow-black-1">
+                <label>
+                    PESO (KG)
+                </label>
+                <input
+                    type="text"
+                    placeholder="Digite seu peso"
+                    class="input-text border-slate-200 placeholder-slate-900 w-64 h-10"
+                    id="peso"
+                    value="70"
+                    onkeyup="campo(this,2,5)"
+                />
+                <small class="p-2">Exemplo: 65.40</small>
+            </div>
+            <div class="flex flex-col justify-around items-center p-3 shadow-black-1">
+                <label>
+                    ALTURA (METROS)
+                </label>
+                <input
+                    type="text"
+                    placeholder="Digite sua altura"
+                    class="input-text border-slate-200 placeholder-slate-900 w-64 h-10"
+                    id="altura"
+                    value="1.70"
+                    onkeyup="campo(this,1,4)"
+                />
+                <small class="p-2">Exemplo: 1.70</small>
+            </div>
+            <div class="flex justify-around items-center p-3">
+                <button 
+                    class="rounded-lg pl-6 pr-6 pt-3 pb-3 bg-red-800 text-white hover:bg-blue-400" 
+                    onclick="getLimpar()">
+                    Limpar
+                </button>
+                <button 
+                    class="rounded-lg pl-6 pr-6 pt-3 pb-3 bg-blue-800 text-white hover:bg-blue-400" 
+                    onclick="getCalcular()">
+                    Calcular
+                </button>
+            </div>
+        </div>
+        <div class="h-50vh p-10 flex-col justify-between flex gap-4 text-blue-600 shadow-black-1">
+            <div class="title-data text-center">SEU PERCETIL IMC</div>
+            <div id="dataIMC"></div>
+            <div id="dataSaude"></div>
+            <div id="result"></div>      
+        </div>
+    </div>
+
+    <script src="data/dataPercentil.js" defer></script>
+    <script src="assets/js/Class_calculadora.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+</body>
+</html>
