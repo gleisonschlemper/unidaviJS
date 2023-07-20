@@ -22,7 +22,7 @@ body{
     display: none;
 }
 
-input[type="radio"]:checked + label[key="femenino"]{
+input[type="radio"]:checked + label[key="feminino"]{
     background-color: rgb(194, 24, 220);
     border: 2px solid rgb(255, 255, 255);
     color: white;

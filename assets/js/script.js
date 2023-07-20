@@ -102,7 +102,7 @@ const getLimpar = () => { // função de limpar todos os dados dos inputs
    }
 }
 
-const DOM = (ID) => { // Retorna o elemento baseado no ID 
+const DOM = (ID) => { // Retorna o elemento
    return document.querySelector(ID) 
 }
 
@@ -148,7 +148,7 @@ const getCalcular = () => { // Função de calcular as informações dos inputs
       limparRes("Digite sua altura!")
    }
    else{ // SENÃO MOSTRA A RESPOSTA DO CALCULO PERCENTIL 
-      DOM("#dataIMC").innerHTML = "Seu IMC ficou em "+oResultaUser.IMC;
+      DOM("#dataIMC").innerHTML = "Seu IMC ficou em "+oResultaUser.IMC.toFixed(2);
       DOM("#dataSaude").innerHTML = "Saúde: "+oResultaUser.saude;
       DOM("#result").innerHTML = 
          "Seu peso ideal deve ficar entre "+oResultaUser.pesoMin+
